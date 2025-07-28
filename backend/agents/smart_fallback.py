@@ -114,8 +114,8 @@ class SmartFallbackSystem:
         
         # General help
         elif any(word in query_lower for word in ['help', 'hello', 'hi']):
-            return "Hello! I specialize in appliance parts for refrigerators, dishwashers, washing machines, and dryers. I can help you find parts, check compatibility, and provide installation guidance. What appliance are you working on today?"
+            return "Hello! I specialize in appliance parts for dishwashers and refrigerators. I can help you find parts, check compatibility, and provide installation guidance. What appliance are you working on today?"
         
         # Default response
         else:
-            return "I'm here to help with appliance parts and repairs! I can assist with refrigerators, dishwashers, washing machines, and dryers. Please tell me: 1) What type of appliance, 2) What problem you're experiencing, 3) Your model number if you have it."
+            return "I'm here to help with appliance parts and repairs! I can assist with dishwashers and refrigerators. Please tell me: 1) What type of appliance, 2) What problem you're experiencing, 3) Your model number if you have it."

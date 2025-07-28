@@ -134,8 +134,8 @@ class Orchestrator:
             Response dictionary with generated answer and model identifier.
         """
         prompt = (
-            "You are an assistant for an e‑commerce appliance parts site. "
-            "Answer the following question in a concise, friendly manner: "
+            "You are an assistant for an e‑commerce appliance parts site specializing in dishwashers and refrigerators. "
+            "Answer the following question in a concise, friendly manner focusing on dishwasher and refrigerator parts only: "
             f"{message}"
         )
         
