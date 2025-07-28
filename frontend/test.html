@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frontend Test Page</h1>
+        <p>This is a basic HTML page to test if the browser is working.</p>
+        <div id="js-test">JavaScript is not working</div>
+        <div id="react-test">React test will appear here</div>
+        <button onclick="testFunction()">Test JavaScript</button>
+    </div>
+
+    <script>
+        // Test basic JavaScript
+        document.getElementById('js-test').innerHTML = '<span class="success">✓ JavaScript is working!</span>';
+        console.log('Basic JavaScript is working');
+
+        function testFunction() {
+            alert('JavaScript onclick is working!');
+        }
+
+        // Test if we can load React
+        try {
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.innerHTML = `
+                import React from 'react';
+                import ReactDOM from 'react-dom/client';
+
+                const TestComponent = () => React.createElement('div', { className: 'success' }, '✓ React is loading!');
+                
+                const testDiv = document.getElementById('react-test');
+                if (testDiv) {
+                    const root = ReactDOM.createRoot(testDiv);
+                    root.render(React.createElement(TestComponent));
+                    console.log('React test component rendered');
+                }
+            `;
+            document.head.appendChild(script);
+        } catch (error) {
+            console.error('Error loading React:', error);
+            document.getElementById('react-test').innerHTML = '<span class="error">✗ React failed to load: ' + error.message + '</span>';
+        }
+    </script>
+</body>
+</html>

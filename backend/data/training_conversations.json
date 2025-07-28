@@ -1,0 +1,114 @@
+[
+  {
+    "input": "My refrigerator isn\u2019t cooling properly. What should I check first?",
+    "output": "Make sure the condenser coils are clean, the temperature settings are correct, and the doors are closing tightly. Also check for frost buildup on the evaporator coils or a faulty evaporator fan",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "The light in my fridge isn\u2019t working. Do I need a specific bulb?",
+    "output": "Yes, refrigerators typically use appliance bulbs rated for cold temperatures. Search for a bulb compatible with your fridge model",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "How do I find the right water filter for my refrigerator?",
+    "output": "Locate your refrigerator\u2019s model number (usually inside the fridge or on the door frame), then search for water filters compatible with that model",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "My refrigerator is leaking water on the floor. What could be wrong?",
+    "output": "Check if the defrost drain is clogged, the water supply line is loose, or the drain pan is cracked.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "The ice maker in my fridge isn\u2019t making ice. What\u2019s the fix?",
+    "output": "Ensure the ice maker is turned on, water supply is connected, and the fill tube isn\u2019t frozen. You may need to replace the water inlet valve or the ice maker assembly.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "My fridge is making loud noises. Should I be worried?",
+    "output": "Noises can be caused by a faulty evaporator fan motor, condenser fan, or compressor. Unusual sounds should be diagnosed further\u2014refer to your user manual or seek a replacement part.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "How do I replace a refrigerator door gasket?",
+    "output": "Remove the old gasket, clean the gasket groove, and press the new gasket firmly into place, making sure it forms a good seal all around the door.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "Can I run my refrigerator with a damaged door seal?",
+    "output": "It\u2019s not recommended. A damaged seal causes cold air leaks, making the compressor work harder and increasing energy usage. Replace the gasket for proper operation",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "My dishwasher isn\u2019t draining. What should I do?",
+    "output": "Check for a clogged drain hose, blocked air gap, or a faulty drain pump. Clean out the filter and ensure nothing is obstructing the drain",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "Why are my dishes still dirty after a wash cycle?",
+    "output": "Ensure you\u2019re not overloading the dishwasher, the spray arms are clear, and you\u2019re using the right detergent. Also check the filter for debris.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "The dishwasher won\u2019t start. What could be the problem?",
+    "output": "Confirm the door is fully closed and latched, the child lock isn\u2019t activated, and that power is supplied to the dishwasher. If needed, check the door latch or control board.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "My dishwasher smells bad. How can I clean it?",
+    "output": "Clean the filter and spray arms, run a cleaning cycle with dishwasher cleaner or vinegar, and wipe the door seals.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "The detergent isn\u2019t dispensing during the cycle. What\u2019s wrong?",
+    "output": "The dispenser could be blocked by utensils or faulty. Make sure nothing is blocking the detergent cup and consider replacing the dispenser if it won\u2019t open.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "Can I use regular dish soap in my dishwasher?",
+    "output": "No, always use dishwasher-specific detergent. Regular dish soap will create excessive suds and may cause leaks.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "How often should I clean the dishwasher filter?",
+    "output": "Clean the filter at least once a month, or more frequently if you notice poor cleaning results or debris buildup.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  },
+  {
+    "input": "The dishwasher leaves water spots on glasses. How can I fix this?",
+    "output": "Use rinse aid to help prevent spots, and ensure you\u2019re using the right detergent and not overloading the dishwasher.",
+    "domain": "appliance_parts",
+    "agent": "human",
+    "timestamp": "cpu"
+  }
+]

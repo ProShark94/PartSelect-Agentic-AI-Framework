@@ -1,0 +1,26 @@
+[
+  {
+    "part_number": "PS11752778",
+    "alt_numbers": ["WPW10321304", "W10321304"],
+    "name": "Refrigerator Door Bin",
+    "category": "Refrigerator",
+    "brand": "Whirlpool",
+    "description": "Clear door shelf that attaches to the inside of the refrigerator door and holds jars and bottles.",
+    "model_compatibility": ["WDT780SAEM1", "GC3PHEXNQ02", "WRF535SMBM00", "WRS325SDHZ08"],
+    "installation": "Installation is tool‑free—simply align the bin on the designated slots on the refrigerator door and snap it into place.",
+    "instructions": "To install the door bin, open the refrigerator door and locate the slots on the inner side. Align the hooks on the bin with the slots and push down gently until the bin snaps into place.",
+    "image_url": "https://example.com/images/ps11752778.jpg"
+  },
+  {
+    "part_number": "PS12345678",
+    "alt_numbers": ["W10850475"],
+    "name": "Dishwasher Water Pump",
+    "category": "Dishwasher",
+    "brand": "KitchenAid",
+    "description": "Replacement water circulation pump for dishwashers. Restores proper water flow and cleaning performance.",
+    "model_compatibility": ["KDTM404KPS0", "KDTE334GPS0", "KDPM604KPS0"],
+    "installation": "Disconnect power and water supply. Remove the lower dish rack, access the pump from the bottom, disconnect the wiring and hoses, replace with the new pump, and reassemble.",
+    "instructions": "1. Unplug the dishwasher and turn off the water supply. 2. Remove the lower access panel. 3. Unhook the wires and hoses from the old pump. 4. Install the new pump in the same orientation. 5. Reconnect hoses and wiring, reattach the panel, restore power and test.",
+    "image_url": "https://example.com/images/ps12345678.jpg"
+  }
+]
