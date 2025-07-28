@@ -1,6 +1,16 @@
 @import "rsuite/dist/rsuite.css";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* PartSelect Brand Colors */
+:root {
+  --partselect-green: #2d5a3d;       /* Main bottle green */
+  --partselect-green-light: #4a7c59; /* Lighter green for hovers */
+  --partselect-green-dark: #1e3d2a;  /* Darker green for accents */
+  --partselect-gray: #f8f9fa;        /* Light background */
+  --partselect-border: #e9ecef;      /* Border color */
+  --partselect-text: #212529;        /* Dark text */
+}
+
 .messages-container {
   flex: 1;
   overflow-y: auto;
@@ -11,7 +21,8 @@
   padding-bottom: 2px;
   font-size: 16px;
   margin-top: 60px; 
-  margin-bottom: 70px; 
+  margin-bottom: 70px;
+  background: var(--partselect-gray);
 }
 
 .user-message-container,
@@ -41,13 +52,14 @@
   font-weight: 400;
   line-height: 1.4;
   text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .user-message {
   align-self: flex-end;
   padding: 14px;
   font-size: 13px;
-  background-color: #1b3875;
+  background-color: var(--partselect-green);
   color: #ffffff;
   border-top-right-radius: 0;
   text-align: left;
@@ -55,9 +67,10 @@
 
 .assistant-message {
   align-self: flex-start;
-  background-color: #f6f6f6;
+  background-color: white;
+  border: 1px solid var(--partselect-border);
   border-top-left-radius: 0;
-  color: #000000;
+  color: var(--partselect-text);
   padding: 14px;
   font-size: 13px;
   width: 100%;
@@ -70,50 +83,67 @@
 
 .input-area {
   font-size: 15px;
-  padding: 10px;
+  padding: 15px 20px;
   bottom: 0;
   width: 100%;
   display: flex;
-  border-top: 1px solid #ccc;
-  background: #fff;
+  border-top: 1px solid var(--partselect-border);
+  background: white;
   position: fixed;
   width: calc(100% - 40px);
+  box-shadow: 0 -2px 8px rgba(45, 90, 61, 0.1);
 }
 
 .input-area textarea {
   font-size: 15px;
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--partselect-border);
   resize: none;
   overflow-y: auto;
   min-height: 40px;
   max-height: 200px;
   margin-right: 10px;
+  transition: border-color 0.2s ease;
+}
+
+.input-area textarea:focus {
+  outline: none;
+  border-color: var(--partselect-green);
+  box-shadow: 0 0 0 2px rgba(45, 90, 61, 0.1);
 }
 
 .input-area input {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   margin-right: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--partselect-border);
   font-size: 13px;
+  transition: border-color 0.2s ease;
+}
+
+.input-area input:focus {
+  outline: none;
+  border-color: var(--partselect-green);
+  box-shadow: 0 0 0 2px rgba(45, 90, 61, 0.1);
 }
 
 .input-area button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 5px;
-  background-color: #121212;
+  border-radius: 8px;
+  background-color: var(--partselect-green);
   color: white;
   cursor: pointer;
   font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
 }
 
 .input-area button:hover {
-  background-color: #333333;
+  background-color: var(--partselect-green-light);
 }
 
 .input-area button:disabled {

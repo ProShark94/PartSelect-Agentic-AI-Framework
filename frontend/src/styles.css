@@ -1,9 +1,19 @@
-/* Global styles */
+/* Global styles with PartSelect branding */
+:root {
+  --partselect-green: #2d5a3d;       /* Main bottle green */
+  --partselect-green-light: #4a7c59; /* Lighter green for hovers */
+  --partselect-green-dark: #1e3d2a;  /* Darker green for accents */
+  --partselect-gray: #f8f9fa;        /* Light background */
+  --partselect-border: #e9ecef;      /* Border color */
+  --partselect-text: #212529;        /* Dark text */
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #fafafa;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background-color: var(--partselect-gray);
+  color: var(--partselect-text);
 }
 
 .app-container {
@@ -13,10 +23,11 @@ body {
 }
 
 .app-header {
-  background-color: #003366;
+  background-color: var(--partselect-green);
   color: #fff;
   padding: 1rem;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(45, 90, 61, 0.2);
 }
 
 .chat-main {
@@ -33,9 +44,10 @@ body {
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid var(--partselect-border);
+  border-radius: 8px;
   background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .message {
@@ -56,17 +68,19 @@ body {
   border-radius: 16px;
   max-width: 80%;
   word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .message.user .message-bubble {
-  background-color: #dcf8c6;
-  color: #000;
+  background-color: var(--partselect-green);
+  color: white;
   align-self: flex-end;
 }
 
 .message.assistant .message-bubble {
-  background-color: #f1f0f0;
-  color: #000;
+  background-color: white;
+  border: 1px solid var(--partselect-border);
+  color: var(--partselect-text);
 }
 
 .chat-input-form {
@@ -79,22 +93,34 @@ body {
   flex: 1;
   padding: 0.75rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid var(--partselect-border);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--partselect-green);
+  box-shadow: 0 0 0 2px rgba(45, 90, 61, 0.1);
 }
 
 .chat-send-button {
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  background-color: #003366;
+  background-color: var(--partselect-green);
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chat-send-button:hover {
+  background-color: var(--partselect-green-light);
 }
 
 .chat-send-button:disabled {
-  opacity: 0.5;
+  background-color: #cccccc;
   cursor: not-allowed;
 }
 

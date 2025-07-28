@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* PartSelect Brand Colors */
+:root {
+  --partselect-green: #2d5a3d;       /* Main bottle green */
+  --partselect-green-light: #4a7c59; /* Lighter green for hovers */
+  --partselect-green-dark: #1e3d2a;  /* Darker green for accents */
+  --partselect-gray: #f8f9fa;        /* Light background */
+  --partselect-border: #e9ecef;      /* Border color */
+  --partselect-text: #212529;        /* Dark text */
+}
+
 * {
   font-family: "Inter", sans-serif;
   font-size: 14px;
@@ -9,7 +19,7 @@
 }
 
 .App {
-  background-color: white;
+  background-color: var(--partselect-gray);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,9 +30,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95); 
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background: var(--partselect-green);
+  color: white;
+  box-shadow: 0px 2px 8px rgba(45, 90, 61, 0.2);
   display: flex;
   font-weight: 700;
   font-size: 16px;
@@ -39,13 +49,15 @@
   align-items: center;
   height: 100vh;
   padding: 20px;
+  background: var(--partselect-gray);
 }
 
 .auth-form {
   background: white;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(45, 90, 61, 0.1);
+  border: 1px solid var(--partselect-border);
   width: 100%;
   max-width: 400px;
 }
@@ -54,32 +66,40 @@
   margin-bottom: 20px;
   text-align: center;
   font-size: 24px;
-  color: #333;
+  color: var(--partselect-green);
 }
 
 .auth-form input {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--partselect-border);
   border-radius: 5px;
   font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--partselect-green);
+  box-shadow: 0 0 0 2px rgba(45, 90, 61, 0.1);
 }
 
 .auth-form button {
   width: 100%;
   padding: 12px;
-  background-color: #1b3875;
+  background-color: var(--partselect-green);
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
   margin-bottom: 10px;
+  transition: background-color 0.2s ease;
 }
 
 .auth-form button:hover {
-  background-color: #2c4a8a;
+  background-color: var(--partselect-green-light);
 }
 
 .auth-form button:disabled {
@@ -95,10 +115,15 @@
 .auth-toggle button {
   background: none;
   border: none;
-  color: #1b3875;
+  color: var(--partselect-green);
   text-decoration: underline;
   cursor: pointer;
   font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.auth-toggle button:hover {
+  color: var(--partselect-green-light);
 }
 
 .error-message {
