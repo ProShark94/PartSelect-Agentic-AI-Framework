@@ -1,5 +1,6 @@
 import React from 'react';
 import Message from './Message.jsx';
+import './ChatWindow.css';
 
 function ChatWindow({ messages, loading, bottomRef }) {
   return (

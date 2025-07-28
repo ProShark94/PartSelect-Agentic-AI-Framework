@@ -128,12 +128,17 @@ body {
 .link-button {
   background: none;
   border: none;
-  color: #003366;
+  color: var(--partselect-green);
   text-decoration: underline;
   cursor: pointer;
   font-size: 0.9rem;
   padding: 0;
   margin: 0;
+  transition: color 0.2s ease;
+}
+
+.link-button:hover {
+  color: var(--partselect-green-light);
 }
 
 .product-info h4 {

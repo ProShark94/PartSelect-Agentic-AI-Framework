@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import ChatWindow from './components/ChatWindow.jsx';
 import axios from 'axios';
 import { API_BASE_URL } from './config.js';
+import './App.css';
 
 // Generate a random session ID to maintain context across messages
 function generateSessionId() {
