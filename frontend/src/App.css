@@ -1,13 +1,20 @@
+/**
+ * PartSelect Chat Application Styles
+ * 
+ * Main application stylesheet implementing the PartSelect brand identity
+ * with bottle green color scheme and professional styling for authentication
+ * and chat interface components.
+ */
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/* PartSelect Brand Colors */
 :root {
-  --partselect-green: #2d5a3d;       /* Main bottle green */
-  --partselect-green-light: #4a7c59; /* Lighter green for hovers */
-  --partselect-green-dark: #1e3d2a;  /* Darker green for accents */
-  --partselect-gray: #f8f9fa;        /* Light background */
-  --partselect-border: #e9ecef;      /* Border color */
-  --partselect-text: #212529;        /* Dark text */
+  --partselect-green: #006837;
+  --partselect-green-light: #2e8b57;
+  --partselect-green-dark: #004225;
+  --partselect-gray: #f8f9fa;
+  --partselect-border: #e9ecef;
+  --partselect-text: #212529;
 }
 
 * {
@@ -32,7 +39,7 @@
   width: 100%;
   background: var(--partselect-green);
   color: white;
-  box-shadow: 0px 2px 8px rgba(45, 90, 61, 0.2);
+  box-shadow: 0px 2px 8px rgba(0, 104, 55, 0.2);
   display: flex;
   font-weight: 700;
   font-size: 16px;
@@ -56,7 +63,7 @@
   background: white;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(45, 90, 61, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 104, 55, 0.1);
   border: 1px solid var(--partselect-border);
   width: 100%;
   max-width: 400px;
@@ -82,7 +89,7 @@
 .auth-form input:focus {
   outline: none;
   border-color: var(--partselect-green);
-  box-shadow: 0 0 0 2px rgba(45, 90, 61, 0.1);
+  box-shadow: 0 0 0 2px rgba(0, 104, 55, 0.1);
 }
 
 .auth-form button {

@@ -1,4 +1,13 @@
-"""Flask application exposing the chat interface for the PartSelect agent."""
+"""
+PartSelect Multi-Agent Chat Application.
+
+A Flask-based web application that provides an intelligent chat interface
+for PartSelect customers, utilizing multiple specialized agents for product
+search, installation guidance, and customer support.
+
+This module serves as the main entry point for the backend API, handling
+authentication, session management, and message routing to appropriate agents.
+"""
 
 from __future__ import annotations
 
@@ -18,15 +27,21 @@ from auth import (
 
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)
 orchestrator = Orchestrator()
 
-# In‑memory context storage keyed by username/session. Each entry stores
-# conversation state for a given authenticated user and session ID.
 sessions: Dict[str, Dict[str, Any]] = {}
 
 
 def _get_authenticated_user() -> Optional[str]:
+    """
+    Extract and verify the authenticated user from the request header.
+    
+    Returns
+    -------
+    Optional[str]
+        The authenticated username if valid token is provided, None otherwise.
+    """
     auth_header = request.headers.get("Authorization", "")
     if not auth_header.startswith("Bearer "):
         return None
@@ -36,7 +51,21 @@ def _get_authenticated_user() -> Optional[str]:
 
 @app.route("/auth/register", methods=["POST"])
 def register() -> Any:
-    data = request.get_json(force=True)  # type: ignore
+    """
+    Register a new user account.
+    
+    Expected JSON payload:
+    {
+        "username": "user123",
+        "password": "password123"
+    }
+    
+    Returns
+    -------
+    Any
+        JSON response containing authentication token or error message.
+    """
+    data = request.get_json(force=True)
     username = data.get("username")
     password = data.get("password")
     if not username or not password:
@@ -49,7 +78,21 @@ def register() -> Any:
 
 @app.route("/auth/login", methods=["POST"])
 def login() -> Any:
-    data = request.get_json(force=True)  # type: ignore
+    """
+    Authenticate an existing user.
+    
+    Expected JSON payload:
+    {
+        "username": "user123",
+        "password": "password123"
+    }
+    
+    Returns
+    -------
+    Any
+        JSON response containing authentication token or error message.
+    """
+    data = request.get_json(force=True)
     username = data.get("username")
     password = data.get("password")
     if not username or not password:
@@ -62,18 +105,35 @@ def login() -> Any:
 
 @app.route("/chat", methods=["POST"])
 def chat() -> Any:
+    """
+    Process a chat message and return an appropriate response.
+    
+    Requires authentication via Bearer token in Authorization header.
+    
+    Expected JSON payload:
+    {
+        "message": "How do I install this part?",
+        "session_id": "unique-session-identifier"
+    }
+    
+    Returns
+    -------
+    Any
+        JSON response containing agent response, detected intent, and session info.
+    """
     user = _get_authenticated_user()
     if not user:
         return jsonify({"error": "Unauthorized"}), 401
-    data = request.get_json(force=True)  # type: ignore
+    data = request.get_json(force=True)
     message: str = data.get("message", "")
     session_id: str = data.get("session_id", "default")
     if not message:
         return jsonify({"error": "Missing 'message' field."}), 400
-    # Compose key with user to isolate sessions per user
+    
     session_key = f"{user}:{session_id}"
     context = sessions.setdefault(session_key, {})
     result = orchestrator.handle_message(message, context)
+    
     return jsonify(
         {
             "response": result.get("response"),
@@ -86,10 +146,25 @@ def chat() -> Any:
 
 @app.route("/reset", methods=["POST"])
 def reset() -> Any:
+    """
+    Reset the conversation context for a specific session.
+    
+    Requires authentication via Bearer token in Authorization header.
+    
+    Expected JSON payload:
+    {
+        "session_id": "unique-session-identifier"
+    }
+    
+    Returns
+    -------
+    Any
+        JSON response confirming the session reset.
+    """
     user = _get_authenticated_user()
     if not user:
         return jsonify({"error": "Unauthorized"}), 401
-    data = request.get_json(force=True)  # type: ignore
+    data = request.get_json(force=True)
     session_id: str = data.get("session_id", "default")
     session_key = f"{user}:{session_id}"
     sessions.pop(session_key, None)

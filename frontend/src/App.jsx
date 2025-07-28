@@ -1,10 +1,16 @@
+/**
+ * PartSelect Chat Application - Main Component
+ * 
+ * Primary React component handling authentication, chat functionality,
+ * and integration with the multi-agent backend system.
+ */
+
 import React, { useState, useRef, useEffect } from 'react';
 import ChatWindow from './components/ChatWindow.jsx';
 import axios from 'axios';
 import { API_BASE_URL } from './config.js';
 import './App.css';
 
-// Generate a random session ID to maintain context across messages
 function generateSessionId() {
   return 'sess-' + Math.random().toString(36).substring(2, 10);
 }
@@ -16,13 +22,11 @@ function App() {
   const [sessionId] = useState(generateSessionId);
   const bottomRef = useRef(null);
 
-  // Authentication state
   const [token, setToken] = useState(() => localStorage.getItem('authToken') || '');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [mode, setMode] = useState('login');
 
-  // Attach token to axios default headers when it changes
   useEffect(() => {
     if (token) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;

@@ -1,3 +1,10 @@
+/**
+ * Chat Window Component
+ * 
+ * Renders the main chat interface displaying message history and loading states.
+ * Manages automatic scrolling and visual feedback for user interactions.
+ */
+
 import React from 'react';
 import Message from './Message.jsx';
 import './ChatWindow.css';

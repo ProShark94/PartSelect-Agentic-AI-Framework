@@ -1,11 +1,17 @@
-/* Global styles with PartSelect branding */
+/**
+ * Global Application Styles
+ * 
+ * Core styling foundation for the PartSelect chat application,
+ * providing consistent branding and layout patterns across components.
+ */
+
 :root {
-  --partselect-green: #2d5a3d;       /* Main bottle green */
-  --partselect-green-light: #4a7c59; /* Lighter green for hovers */
-  --partselect-green-dark: #1e3d2a;  /* Darker green for accents */
-  --partselect-gray: #f8f9fa;        /* Light background */
-  --partselect-border: #e9ecef;      /* Border color */
-  --partselect-text: #212529;        /* Dark text */
+  --partselect-green: #006837;
+  --partselect-green-light: #2e8b57;
+  --partselect-green-dark: #004225;
+  --partselect-gray: #f8f9fa;
+  --partselect-border: #e9ecef;
+  --partselect-text: #212529;
 }
 
 body {
@@ -27,7 +33,7 @@ body {
   color: #fff;
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(45, 90, 61, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 104, 55, 0.2);
 }
 
 .chat-main {
@@ -101,7 +107,7 @@ body {
 .chat-input:focus {
   outline: none;
   border-color: var(--partselect-green);
-  box-shadow: 0 0 0 2px rgba(45, 90, 61, 0.1);
+  box-shadow: 0 0 0 2px rgba(0, 104, 55, 0.1);
 }
 
 .chat-send-button {

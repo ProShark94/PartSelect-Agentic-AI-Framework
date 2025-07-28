@@ -1,4 +1,11 @@
-"""Agent for retrieving product information from the local catalogue."""
+"""
+Product Search Agent for PartSelect Catalogue.
+
+This module implements intelligent product search capabilities with both
+exact matching and semantic search features. It handles part number lookups,
+keyword searches, and vector-based similarity matching for comprehensive
+product discovery in the PartSelect catalogue.
+"""
 
 from __future__ import annotations
 
@@ -11,18 +18,32 @@ from .base_agent import BaseAgent
 
 
 class ProductSearchAgent(BaseAgent):
-    """Search for parts in the catalogue and return information.
-
-    In addition to exact lookups by part number or keywords, this agent can
-    perform semantic search using an optional vector store. When initialised
-    with ``use_vector=True``, it constructs a `VectorStore` over the
-    catalogue. Queries that do not directly mention a part number will be
-    passed to the vector store to retrieve the most relevant products.
+    """
+    Intelligent product search agent with multi-modal search capabilities.
+    
+    This agent provides comprehensive product search functionality including:
+    - Direct part number matching using regex patterns
+    - Keyword-based catalogue searching
+    - Semantic similarity search via vector embeddings
+    - Contextual product recommendations
+    
+    The agent maintains an in-memory product catalogue and optionally
+    constructs a vector store for advanced semantic search capabilities.
     """
 
     PART_PATTERN = re.compile(r"\b(PS\d+|WP[\w\d]+|W\d{5,})\b", re.IGNORECASE)
 
     def __init__(self, data_path: Optional[str] = None, use_vector: bool = False) -> None:
+        """
+        Initialize the product search agent.
+        
+        Parameters
+        ----------
+        data_path : Optional[str]
+            Path to the products JSON file. If None, uses default location.
+        use_vector : bool
+            Whether to enable semantic search via vector store.
+        """
         base_dir = os.path.dirname(os.path.dirname(__file__))
         self.data_file = data_path or os.path.join(base_dir, "data", "products.json")
         self.catalogue: List[Dict[str, Any]] = []
