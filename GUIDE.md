@@ -1,7 +1,33 @@
-Training Guide
+Complete Guide
 ==============
 
-## What Is Training Data?
+## What You're Building
+
+A smart AI assistant that helps customers with appliance parts and repairs. Uses your expertise to give better answers than generic AI.
+
+## Quick Setup
+
+### 1. Backend Setup
+```bash
+cd "Agentic AI framework"
+python -m venv venv
+source venv/bin/activate
+cd backend
+pip install flask flask-cors transformers torch scikit-learn PyJWT bcrypt
+python app.py
+```
+
+### 2. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### 3. Open Browser
+Go to `http://localhost:5174` and start chatting!
+
+## Training Data
 
 Training data teaches your AI assistant how to answer questions. Instead of generic responses, it gives expert advice based on your knowledge.
 
