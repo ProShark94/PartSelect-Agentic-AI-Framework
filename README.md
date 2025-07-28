@@ -30,7 +30,7 @@ Smart AI-powered chat system for appliance troubleshooting and parts support. Us
 
 ## Training Data
 
-The system includes 16 expert appliance troubleshooting examples. Add your own training data to improve responses.
+The system includes 16 expert appliance troubleshooting examples. 
 
 ## Documentation
 

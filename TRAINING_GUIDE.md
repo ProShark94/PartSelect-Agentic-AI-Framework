@@ -1,7 +1,7 @@
 Complete Guide
 ==============
 
-## What You're Building
+## Product
 
 A smart AI assistant that helps customers with appliance parts and repairs. Uses your expertise to give better answers than generic AI.
 

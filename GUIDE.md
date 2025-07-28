@@ -1,7 +1,7 @@
-Complete Guide
+Complete Guide 
 ==============
 
-## What You're Building
+## Core Idea
 
 A smart AI assistant that helps customers with appliance parts and repairs. Uses your expertise to give better answers than generic AI.
 
@@ -13,7 +13,7 @@ cd "Agentic AI framework"
 python -m venv venv
 source venv/bin/activate
 cd backend
-pip install flask flask-cors transformers torch scikit-learn PyJWT bcrypt
+pip install -r requirements.txt
 python app.py
 ```
 
@@ -126,7 +126,5 @@ Your training file should look like this:
 1. **Start Simple**: Add 5-10 common questions first
 2. **Test Everything**: Always test new training data
 3. **Be Specific**: Include appliance names in questions
-4. **Stay Professional**: Write like you're helping a customer
-5. **Update Regularly**: Add new scenarios as you encounter them
+4. **Update Regularly**: Add new scenarios as you encounter them
 
-That's it! Simple training data that makes your AI assistant much smarter.
